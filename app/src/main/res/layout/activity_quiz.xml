@@ -1,0 +1,33 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Que país é este?"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/ivBandeira"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="@string/bandeira" />
+
+    <RadioGroup
+        android:id="@+id/rgAlternativas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!-- Alternativas serão adicionadas dinamicamente -->
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnResponder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Responder"
+        android:enabled="false" />
+</LinearLayout>

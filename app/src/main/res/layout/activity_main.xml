@@ -1,0 +1,65 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="78dp"
+        android:layout_height="64dp"
+        android:layout_gravity="right"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="66dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center|left"
+            app:srcCompat="@drawable/logo" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivFotoAluno"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <Button
+        android:id="@+id/btnCarregarFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Carregar Foto" />
+
+    <EditText
+        android:id="@+id/etNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3C4BC335"
+        android:hint="Nome do Aluno" />
+
+    <EditText
+        android:id="@+id/etRGM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3C4BC335"
+        android:hint="RGM"
+        android:inputType="number|numberDecimal|numberSigned" />
+
+    <Button
+        android:id="@+id/btnIniciarQuiz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Quiz"
+        android:enabled="false" />
+
+    <Button
+        android:id="@+id/btnEncerrarQuiz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Encerrar Quiz" />
+
+</LinearLayout>
