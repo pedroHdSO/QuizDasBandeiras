@@ -36,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         TextWatcher textWatcher = new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -45,8 +44,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
-            }
+            public void afterTextChanged(Editable s) {}
         };
 
         etNome.addTextChangedListener(textWatcher);
@@ -59,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("nome", etNome.getText().toString());
             intent.putExtra("rgm", etRGM.getText().toString());
             if (fotoUri != null) {
-                intent.putExtra("fotoUri", fotoUri.toString());
+                intent.putExtra("fotoUri", fotoUri.toString()); // Enviando fotoUri
             }
             startActivity(intent);
         });
@@ -86,5 +84,4 @@ public class MainActivity extends AppCompatActivity {
                     checkFields();
                 }
             });
-
 }

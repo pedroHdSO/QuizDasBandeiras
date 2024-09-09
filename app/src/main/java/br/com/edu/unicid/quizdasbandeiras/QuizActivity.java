@@ -18,7 +18,8 @@ public class QuizActivity extends AppCompatActivity {
     private int perguntaAtual = 0;
     private int acertos = 0;
     private String nomeAluno;
-    private String respostaCorretaAtual; // Armazena a resposta correta atual
+    private String respostaCorretaAtual;
+    private String fotoUriString;
 
     private String[][] perguntas = {
             {"brasil", "Brasil", "Canadá", "Estados Unidos", "Japão"},
@@ -49,6 +50,7 @@ public class QuizActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         nomeAluno = intent.getStringExtra("nome");
+        fotoUriString = intent.getStringExtra("fotoUri"); // Recebe fotoUri
 
         carregarPergunta();
 
@@ -71,12 +73,12 @@ public class QuizActivity extends AppCompatActivity {
                 Intent intentRanking = new Intent(QuizActivity.this, RankingActivity.class);
                 intentRanking.putExtra("acertos", acertos);
                 intentRanking.putExtra("nome", nomeAluno);
+                intentRanking.putExtra("fotoUri", fotoUriString); // Passando fotoUri para RankingActivity
                 startActivity(intentRanking);
                 finish();
             }
         });
     }
-
 
     private void carregarPergunta() {
         rgAlternativas.clearCheck();
@@ -89,7 +91,6 @@ public class QuizActivity extends AppCompatActivity {
         List<String> listaAlternativas = Arrays.asList(alternativas);
         Collections.shuffle(listaAlternativas);
 
-        // Atualiza a resposta correta atual após o embaralhamento
         for (String alternativa : listaAlternativas) {
             if (alternativa.equals(perguntas[perguntaAtual][1])) {
                 respostaCorretaAtual = alternativa;

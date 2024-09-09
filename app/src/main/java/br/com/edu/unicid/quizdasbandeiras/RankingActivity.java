@@ -32,18 +32,15 @@ public class RankingActivity extends AppCompatActivity {
         tvNome.setText("Nome: " + nome);
         tvAcertos.setText("Acertos: " + acertos);
 
-        // Verifica se fotoUriString não é nulo ou vazio antes de tentar usá-lo
         if (fotoUriString != null && !fotoUriString.isEmpty()) {
             Uri fotoUri = Uri.parse(fotoUriString);
-            ivFotoAluno.setImageURI(fotoUri);
+            ivFotoAluno.setImageURI(fotoUri); // Exibe a imagem carregada pelo aluno
         } else {
             ivFotoAluno.setImageResource(R.drawable.logo); // Imagem padrão caso não haja foto
         }
 
         btnResponderNovamente.setOnClickListener(v -> {
             Intent intentQuiz = new Intent(RankingActivity.this, QuizActivity.class);
-            intentQuiz.putExtra("nome", nome);
-            intentQuiz.putExtra("fotoUri", fotoUriString);
             startActivity(intentQuiz);
             finish();
         });
@@ -53,5 +50,12 @@ public class RankingActivity extends AppCompatActivity {
             startActivity(intentMain);
             finish();
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(RankingActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
